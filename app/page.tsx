@@ -112,10 +112,37 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="w-full py-8 text-center text-sm text-gray-600 relative z-10 border-t border-gray-900/50 mt-12 bg-gray-950/50 backdrop-blur-md">
-        <div className="max-w-4xl mx-auto px-6 flex items-center justify-center gap-2">
-          <ShieldQuestion className="w-4 h-4" />
-          For education and entertainment. Not career, hiring, or employment advice.
+      <footer className="w-full relative z-10 border-t border-gray-900/50 mt-12 bg-gray-950/50 backdrop-blur-md">
+        {/* Contact row */}
+        <div className="max-w-4xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+              RM
+            </div>
+            <div className="text-left">
+              <div className="text-white font-semibold text-sm">Rajani Maski</div>
+              <div className="text-gray-400 text-xs">Passionate Staff / Principal AI Engineer</div>
+            </div>
+          </div>
+          <a
+            href="https://www.linkedin.com/in/rajanimaski/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#0A66C2]/10 hover:bg-[#0A66C2]/20 border border-[#0A66C2]/30 hover:border-[#0A66C2]/60 text-[#60a5fa] hover:text-white px-4 py-2 rounded-xl text-sm font-medium transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+
+        {/* Disclaimer row */}
+        <div className="border-t border-gray-900/50 py-4 text-center">
+          <div className="max-w-4xl mx-auto px-6 flex items-center justify-center gap-2 text-xs text-gray-600">
+            <ShieldQuestion className="w-3.5 h-3.5" />
+            For education and entertainment. Not career, hiring, or employment advice.
+          </div>
         </div>
       </footer>
 

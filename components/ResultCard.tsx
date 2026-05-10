@@ -4,9 +4,10 @@ import { useState } from 'react';
 import { AnalysisResult, UserInput } from '@/lib/types';
 import ScoreGauge from './ScoreGauge';
 import { ShieldAlert, ShieldCheck, Shield, ChevronRight, Download, RefreshCw, BrainCircuit, Target, Lightbulb, Building2, Check, Copy } from 'lucide-react';
-import { downloadShareCard, copyToClipboard } from '@/lib/share';
-import ShareCard from './ShareCard';
+import { copyToClipboard } from '@/lib/share';
+import { downloadCanvasCard } from '@/lib/shareCanvas';
 import { motion } from 'framer-motion';
+
 
 export default function ResultCard({ 
   result, 
@@ -33,11 +34,15 @@ export default function ResultCard({
     window.open(url, '_blank', 'noopener,noreferrer,width=600,height=700');
   };
 
-  const handleDownloadImage = async () => {
+  const handleDownloadImage = () => {
     setDownloading(true);
-    await downloadShareCard('share-card-node', `ai-risk-${userInput.jobTitle.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`);
-    setDownloading(false);
+    try {
+      downloadCanvasCard(result, userInput);
+    } finally {
+      setDownloading(false);
+    }
   };
+
 
   const getRiskIcon = () => {
     if (result.riskScore > 75) return <ShieldAlert className="w-8 h-8 text-red-500" />;
@@ -268,10 +273,6 @@ export default function ResultCard({
         {result.caveat || "This is not career, hiring, or employment advice. For educational and entertainment purposes only."}
       </div>
 
-      {/* Hidden Share Card purely for image generation - must be off-screen but not zero-sized */}
-      <div style={{ position: 'fixed', top: 0, left: '-9999px', pointerEvents: 'none', zIndex: -1 }}>
-        <ShareCard result={result} userInput={userInput} />
-      </div>
     </div>
   );
 }
