@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Am I Replaceable by AI?
 
-## Getting Started
+A viral, production-ready web application that calculates a user's AI automation exposure score based on their daily tasks. The app provides a score, personalized advice, a 30-day action plan, and a shareable LinkedIn card.
 
-First, run the development server:
+## Tech Stack
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion (Animations)
+- Lucide React (Icons)
+- OpenAI API (for dynamic analysis)
+- html-to-image (for shareable card generation)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Smart Analysis**: Uses OpenAI (GPT-4o) for intelligent role analysis.
+- **Graceful Degradation**: If no API key is provided, the app uses a deterministic fallback scoring algorithm to calculate a risk score.
+- **Viral Sharing**: Generates downloadable Open Graph-style PNG cards and pre-written LinkedIn posts.
+- **Sleek UI**: Built with a dark-mode-first, neon-accented aesthetic.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository** (if not already done).
+2. **Install dependencies**:
+   \`\`\`bash
+   npm install
+   \`\`\`
+3. **Set up Environment Variables**:
+   Copy the example environment file:
+   \`\`\`bash
+   cp .env.example .env.local
+   \`\`\`
+   Then, add your \`OPENAI_API_KEY\` to \`.env.local\`. If you skip this, the app will still work using the fallback algorithm.
+4. **Run the development server**:
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment to Vercel
 
-## Learn More
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: Using the Vercel Dashboard
+1. Push your code to a GitHub/GitLab/Bitbucket repository.
+2. Import the repository into Vercel.
+3. In the "Environment Variables" section, add your \`OPENAI_API_KEY\`.
+4. Click Deploy.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Option 2: Using the Vercel CLI
+1. Install the CLI globally:
+   \`\`\`bash
+   npm i -g vercel
+   \`\`\`
+2. Run Vercel:
+   \`\`\`bash
+   vercel
+   \`\`\`
+3. Follow the prompts to link your project.
+4. Add the environment variable:
+   \`\`\`bash
+   vercel env add OPENAI_API_KEY
+   \`\`\`
+5. Deploy to production:
+   \`\`\`bash
+   vercel --prod
+   \`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Disclaimer
+This application is designed for educational and entertainment purposes. It does not provide career, hiring, or employment advice, nor does it predict actual job loss.
