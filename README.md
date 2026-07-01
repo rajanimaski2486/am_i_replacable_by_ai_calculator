@@ -1,5 +1,8 @@
 # Am I Replaceable by AI?
 
+https://am-i-replacable-by-ai-calculator.vercel.app/
+<img width="618" height="756" alt="image" src="https://github.com/user-attachments/assets/e19debdc-0b09-4e7c-95f2-94dea2771bfa" />
+
 
 A viral, production-ready web application that calculates a user's AI automation exposure score based on their daily tasks. The app provides a score, personalized advice, a 30-day action plan, and a shareable LinkedIn card.
 
