@@ -1,6 +1,5 @@
 # Am I Replaceable by AI?
 
-![App Screenshot](./public/screenshot.png)
 
 A viral, production-ready web application that calculates a user's AI automation exposure score based on their daily tasks. The app provides a score, personalized advice, a 30-day action plan, and a shareable LinkedIn card.
 
